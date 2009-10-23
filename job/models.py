@@ -6,7 +6,8 @@ class Job(models.Model):
   location = models.CharField(max_length=40)
   date_added = models.DateTimeField('date added')
   date_expires = models.DateTimeField('date expires', null=True, blank=True)
-  
+  content = models.TextField('content', blank=True)
+
 
   
    
