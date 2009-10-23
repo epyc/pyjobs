@@ -7,22 +7,26 @@
   </head>
   <body>
     <div class="container">
-      <div class="span-24">
-	      The header
+      <div class="span-24 last">
+        epyc - jobs
       </div>
 
-      <div class="span-4">
-	      The first column
+      <div class="span-12 last">
+	 <h3>{{job.title|safe}}</h3>
       </div>
       <div class="span-16">
-	      The center column
+         {{job.content|safe}}
       </div>
       <div class="span-4 last">
-	      The last column
+	<h4>Added on {{job.date_added.date}}</h4>
       </div>
 
       <div class="span-24">
-	      The footer
+        <div class="prepend-top push-5 span-8 last">
+          <span class="quiet">
+	    Copyright © 2008 - epyc 
+          </span>
+        </div>
       </div>
     </div>
 
