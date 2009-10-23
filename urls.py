@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     # Example:
     (r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root': '/Users/atchoupani/workspace/pyjobs/static'}),
     (r'^jobs/', include('pyjobs.job.urls')),
-
+    (r'^$', 'pyjobs.job.views.index'),
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
     # to INSTALLED_APPS to enable admin documentation:
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
