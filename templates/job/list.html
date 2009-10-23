@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="/static/css/blueprint/print.css" type="text/css" media="print">	
+    <!--[if lt IE 8]><link rel="stylesheet" href="/static/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <title> pyjobs - the python job aggregator</title> 
+  </head>
+  <body>
+    <div class="container">
+      <div class="span-24 last">
+        epyc - jobs
+      </div>
+
+      <div class="span-12 last">
+        <h3>All Jobs</h3>
+      </div>
+      <div class="span-16">
+	 <ul>
+           {% for job in jobs %}
+             <li>{{job.date_added}} - <a href="/jobs/{{job.id}}">{{job.title}}</a></li>
+           {% endfor %}
+         </ul>
+      </div>
+      <div class="span-4 last">
+	<h4>{{job.date_added}}</h4>
+      </div>
+
+      <div class="span-24">
+        <div class="prepend-top push-5 span-8 last">
+          <span class="quiet">
+	    Copyright © 2008 - epyc 
+          </span>
+        </div>
+      </div>
+    </div>
+
+    {{job_id}}
+  </body>
+</html>
+
