@@ -1,29 +1,29 @@
 <html>
   <head>
+    <link rel="stylesheet" href="/static/css/main.css" type="text/css" media="screen, projection">
     <link rel="stylesheet" href="/static/css/blueprint/screen.css" type="text/css" media="screen, projection">
     <link rel="stylesheet" href="/static/css/blueprint/print.css" type="text/css" media="print">	
     <!--[if lt IE 8]><link rel="stylesheet" href="/static/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
     <title> pyjobs - the python job aggregator</title> 
   </head>
   <body>
-    <div class="container">
-      <div class="span-24 last">
-        epyc - jobs
+    <div id="container">
+      <div id="header">
+        <a href="/"><h1>epyc - jobs</h1></a>
       </div>
-
-      <div class="span-12 last">
-	 <h3>{{job.title|safe}}</h3>
+      <div id="title">
+	 <h3><a href="/jobs/{{job.id}}">{{job.title|safe}}</a></h3>
       </div>
-      <div class="span-16">
+      <div id="content">
          {{job.content|safe}}
       </div>
-      <div class="span-4 last">
+      <div id="right-column">
 	<h4>Added on {{job.date_added.date}}</h4>
       </div>
 
-      <div class="span-24">
-        <div class="prepend-top push-5 span-8 last">
-          <span class="quiet">
+      <div id="footer">
+        <div>
+          <span id="copyright">
 	    Copyright © 2008 - epyc 
           </span>
         </div>
