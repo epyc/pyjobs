@@ -7,6 +7,7 @@ class Job(models.Model):
   date_added = models.DateTimeField('date added')
   date_expires = models.DateTimeField('date expires', null=True, blank=True)
   content = models.TextField('content', blank=True)
+  external_reference = models.CharField(max_length=200, unique=True)
 
 
   
