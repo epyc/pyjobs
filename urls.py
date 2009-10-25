@@ -6,6 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Example:
+    (r'^admin/', include(admin.site.urls)),
     (r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root': '/Users/atchoupani/workspace/pyjobs/static'}),
     (r'^jobs/', include('pyjobs.job.urls')),
     (r'^$', 'pyjobs.job.views.index'),
@@ -14,5 +15,4 @@ urlpatterns = patterns('',
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-     (r'^admin/', include(admin.site.urls)),
 )

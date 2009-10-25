@@ -5,6 +5,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'$/', 'pyjobs.job.views.index'),
-    (r'(?P<job_id>\d+)', 'pyjobs.job.views.job_detail')
+    (r'(?P<job_id>\d+)', 'pyjobs.job.views.job_detail'),
+    (r'list/(?P<city>.*)$','pyjobs.job.views.index'),
 )
 
