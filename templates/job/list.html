@@ -17,7 +17,7 @@
         <ul id="menu">
           <li><a href="/">All Jobs</a></li>
           {% for a_city in cities %}
-          <li><a href="/{{a_city}}" {% ifequal a_city city %} class="selected" {% endifequal %}>{{a_city}}</a></li>
+          <li><a href="/jobs/list/{{a_city}}" {% ifequal a_city city %} class="selected" {% endifequal %}>{{a_city}}</a></li>
           {% endfor %}
         </ul>
       </div>
