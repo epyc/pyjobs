@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from pyjobs.job import models
 
-def index(request, city):
+def index(request, city = None):
   if city:
     _jobs = models.Job.objects.filter(location = city)
   else:
