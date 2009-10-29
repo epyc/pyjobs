@@ -5,9 +5,9 @@ from pyjobs.job import models
 
 def index(request, city = None):
   if city:
-    _jobs = models.Job.objects.filter(location = city)
+    _jobs = models.Job.objects.filter(location = city).order_by('-date_added')
   else:
-    _jobs = models.Job.objects.all()
+    _jobs = models.Job.objects.all().order_by('-date_added')
   return render_to_response('job/list.html', {'jobs': _jobs, 'cities':['montreal','sfbay'],'city': city},)
 
 
