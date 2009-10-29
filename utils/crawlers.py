@@ -8,15 +8,16 @@ craigslist_base = "http://%s.craigslist.org"
 query = "/search/sof?query=python&catAbbreviation=sof"
 
 def crawl_cl(city):
+  now = datetime.datetime.now()
   url = craigslist_base % city + query
-  print url
+  print now, url
   data = urllib2.urlopen(url)
   soup = BeautifulSoup( data.read() )
   
   for job in soup.findAll('a', attrs={'href': re.compile(".*/sof/[0-9]*.html")}):
      job_url = craigslist_base %city + job['href']
      
-     print job_url
+     print now, job_url
      job_post_data = urllib2.urlopen(job_url).read()
      job_soup = BeautifulSoup(job_post_data)
 
@@ -25,8 +26,10 @@ def crawl_cl(city):
      date_added = clget_date(job_soup) 
      newjob = models.Job(title = title, content = unicode(body), location = city, date_added = date_added,
                          external_reference = job_url )
-     newjob.save()
-
+     try:
+       newjob.save()
+     except Exception, e:
+       print now, e
 
 def clget_date(job_soup):
   f = unicode(job_soup).find('Date:')
